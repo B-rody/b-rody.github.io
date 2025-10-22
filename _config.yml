@@ -1,0 +1,7 @@
+title: Brody Schulke
+description: AI systems, creative automation, and indie product development.
+url: "https://Brody.github.io"
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
