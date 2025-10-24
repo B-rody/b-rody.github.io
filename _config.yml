@@ -1,9 +1,19 @@
 title: Brody Schulke
 description: AI systems, creative automation, and indie product development.
-url: "https://Brody.github.io"
+url: "https://b-rody.github.io"
+
+# Build settings
+markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "sunrise" #"default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
   - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-feed
