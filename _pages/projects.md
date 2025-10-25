@@ -1,8 +1,6 @@
 ---
 layout: single
 author_profile: true
-sidebar:
-  nav: "main"
 permalink: /projects/
 title: Projects
 ---

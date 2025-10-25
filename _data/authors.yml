@@ -1,0 +1,18 @@
+brody:
+  name: "Brody Schulke"
+  bio: "Builds AI automation and internal product loops that reduce repeated cognitive work."
+  avatar: "/assets/images/brody.jpg"
+  location: "Redmond, WA"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/B-rody"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/" # add handle
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:brschulk@outlook.com"
+    # - label: "Twitter"
+    #   icon: "fab fa-x-twitter"
+    #   url: "https://twitter.com/" # optional
