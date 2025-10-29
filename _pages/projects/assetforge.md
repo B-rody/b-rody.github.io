@@ -2,7 +2,7 @@
 layout: single
 author_profile: true
 sidebar:
-  nav: "main"
+  nav: "projects"
 permalink: /projects/assetforge/
 title: AssetForge
 ---

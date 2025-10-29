@@ -5,5 +5,12 @@ main:
     url: /about/
   - title: "Projects"
     url: /projects/
-  - title: "Contact"
-    url: /contact/
+
+# Sidebar navigation for project detail pages (most recent first)
+projects:
+  - title: "AssetForge"
+    url: /projects/assetforge/
+  - title: "InsiderScraper"
+    url: /projects/insiderscraper/
+  - title: "Shipped 3D Game"
+    url: /projects/shipped-3d-game/

@@ -4,6 +4,8 @@ url: "https://b-rody.github.io"
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "sunrise" #"default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
