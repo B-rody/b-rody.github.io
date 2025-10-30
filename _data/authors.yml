@@ -4,6 +4,9 @@ brody:
   avatar: "/assets/images/brody.jpg"
   location: "Redmond, WA"
   links:
+    - label: "Resume"
+      icon: "fas fa-file-pdf"
+      url: "/assets/resume/Brody%20Schulke%20Resume.pdf"
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/B-rody"

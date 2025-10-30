@@ -10,14 +10,14 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Shipped 3D Game - Brody Schulke</title>
+<!-- begin _includes/seo.html --><title>Shipped 3D Game - Portfolio</title>
 <meta name="description" content="AI systems, creative automation, and indie product development.">
 
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Brody Schulke">
+<meta property="og:site_name" content="Portfolio">
 <meta property="og:title" content="Shipped 3D Game">
 <meta property="og:url" content="http://localhost:4000/projects/shipped-3d-game/">
 
@@ -52,7 +52,7 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Brody Schulke Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Portfolio Feed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -76,7 +76,7 @@
 </script>
   </head>
 
-  <body class="layout--single" dir="ltr">
+  <body class="layout--single wide" dir="ltr">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -93,7 +93,7 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Brody Schulke
+          Portfolio
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -104,16 +104,16 @@
               >Home</a>
             </li><li class="masthead__menu-item">
               <a
-                href="/about/"
-                
-                
-              >About</a>
-            </li><li class="masthead__menu-item">
-              <a
                 href="/projects/"
                 
                 
               >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -288,9 +288,123 @@
 
       <section class="page__content" itemprop="text">
         
-        <h2 id="shipped-3d-game">Shipped 3D Game</h2>
+        <h2 id="summary">Summary</h2>
 
-<h1 id="coming-soon">COMING SOON</h1>
+<p>This project is a first-person environmental puzzle game built in Unreal Engine 5.3 that challenges players to
+explore an interconnected multi-room environment. Players solve various puzzles to
+progress through the space, collecting key items and uncovering environmental narrative elements through
+interactive documents and objects.</p>
+
+<p>I built it as a hands-on way to learn Unreal Engine’s blueprint visual scripting system, explore environmental
+puzzle design, and implement persistent save systems for game states.</p>
+
+<h2 id="role--scope">Role &amp; Scope</h2>
+
+<p>I led the entire design and implementation, from initial concept to Steam integration.
+Throughout development, I integrated marketplace asset packs to accelerate content creation while focusing on
+building robust gameplay systems, puzzle mechanics, and save persistence. Every blueprint, puzzle logic, and
+system architecture was designed and implemented by me. I also larned blender and did some basic 3D modeling myself.</p>
+
+<h2 id="system-overview">System Overview</h2>
+
+<p>The game runs on Unreal Engine 5.3 targeting Windows 64-bit with DirectX 12 rendering. The architecture is
+blueprint-heavy with minimal C++ code, leveraging Unreal’s visual scripting for rapid iteration. The game
+implements a multi-layered system architecture:</p>
+
+<ul>
+  <li><strong>Game Management Layer</strong>: Centralized BP_GameManager orchestrates game state, while the GameInstance persists data across level transitions</li>
+  <li><strong>Interaction System</strong>: Interface-based design using BPI_Interact, BPI_Pickup, and BPI_SaveGame ensures consistent behavior across all interactive objects</li>
+  <li><strong>Puzzle Framework</strong>: Seven distinct puzzle types (sequence-based, spatial arrangement, time-based, combination locks, riddle triggers, key-door mechanics, and locked containers) each with unique logic and audio feedback</li>
+  <li><strong>Inventory System</strong>: BP_Inventory manages multiple item categories (keys, tools, collectibles, documents) with dedicated UI widgets and persistence</li>
+  <li><strong>Save System</strong>: Comprehensive serialization through the SaveGame class with specialized structs for player data, inventory state, puzzle progress, and per-location states</li>
+</ul>
+
+<p>The game features seven interconnected environments with location-specific audio ambience and a spatial footstep
+system. Steam integration provides seven achievements tracking progression milestones (IDs:
+Statue_Puzzle_Complete, Button_Puzzle_Complete, Workshop_Unlock, etc.).</p>
+
+<p>Here’s a high-level view of the blueprint architecture. (Technically there’s more happening under the hood, such
+as animation notify systems, Niagara particle effects for environmental objects, motion-triggered lighting, and
+teleportation mechanics, but this captures the core framework)</p>
+
+<pre><code class="language-mermaid"> graph LR
+  PC[Player&lt;br/&gt;Character] --&gt; INT{Interfaces}
+
+  INT --&gt;|Interact| PUZ[Puzzles&lt;br/&gt;7 Types]
+  INT --&gt;|Pickup| ITM[Items&lt;br/&gt;Keys/Tools/Gems]
+  INT --&gt;|Save| SAV[(Save&lt;br/&gt;System)]
+
+  PC --&gt; INV[Inventory]
+  INV --&gt; UI[UI&lt;br/&gt;Widgets]
+
+  PUZ -.Complete Event.-&gt; GM[Game&lt;br/&gt;Manager]
+  ITM --&gt; INV
+
+  GM --&gt; GI[Game&lt;br/&gt;Instance]
+  GI --&gt; SAV
+
+  SAV -.Persist.-&gt; PUZ
+  SAV -.Persist.-&gt; INV
+
+  GM --&gt; STM[Steam&lt;br/&gt;API]
+
+  PC --&gt; AUD[Audio/&lt;br/&gt;VFX]
+  PUZ --&gt; AUD
+
+  classDef coreSystem fill:#4a90e2,stroke:#2e5c8a,stroke-width:2px,color:#fff
+  classDef interface fill:#f39c12,stroke:#c87f0a,stroke-width:2px,color:#fff
+  classDef puzzle fill:#9b59b6,stroke:#7d3c98,stroke-width:2px,color:#fff
+  classDef player fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff
+  classDef external fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
+
+  class GM,GI,SAV coreSystem
+  class INT interface
+  class PUZ puzzle
+  class PC,INV,UI player
+  class STM external
+</code></pre>
+
+<h2 id="key-challenges">Key Challenges</h2>
+
+<ul>
+  <li><strong>Blueprint interface design</strong>: With 40+ interactable blueprints, maintaining consistent interaction patterns was
+critical. I implemented three core interfaces (Interact, Pickup, SaveGame) that standardized communication between
+player character, inventory, and world objects while allowing specialized behavior per object type.</li>
+  <li><strong>Save state persistence</strong>: Puzzle states, item pickups, and environmental object configurations needed to persist
+across sessions. I designed modular save structs that allowed each system (puzzles, inventory, environmental
+objects) to serialize independently, then aggregate into a single save file through the game instance.</li>
+  <li><strong>Audio spatialization</strong>: Different surfaces required distinct footstep sounds, and environmental ambience needed to
+shift between locations. I configured nine physical surface types (grass, forest, gravel, pavement, wood
+floor/stairs, tile, carpet, metal) in DefaultEngine.ini and implemented an AnimNotify system
+(BP_FootprintAnimNotify) that triggers context-appropriate audio based on surface materials.</li>
+  <li><strong>Asset integration and performance</strong>: Integrating 15+ marketplace packs while maintaining stable frame rates
+required careful LOD management and texture streaming configuration. I enabled virtual shadow maps
+(r.Shadow.Virtual.Enable=1) and mesh distance fields (r.GenerateMeshDistanceFields=True) to handle complex
+lighting scenarios efficiently while maintaining 4x MSAA anti-aliasing.</li>
+</ul>
+
+<h2 id="outcomes">Outcomes</h2>
+
+<p>The final build ships as a Steam-integrated Windows executable with full achievement support
+Each playthrough averages 30-45 minutes for core puzzle completion, with additional time for collectible hunting
+and environmental storytelling discovery. The save system allows players to resume exactly where they left off,
+preserving all puzzle states and collected items.</p>
+
+<p>Building this project taught me about interface-based blueprint architecture, persistent state management across
+complex game systems, spatial audio design, and performance optimization for asset-heavy Unreal projects.</p>
+
+<h2 id="what-this-project-highlights">What This Project Highlights</h2>
+
+<ul>
+  <li>Blueprint visual scripting architecture (interface design, event-driven systems)</li>
+  <li>Multi-type puzzle design (sequences, spatial mechanics, environmental triggers)</li>
+  <li>Comprehensive save/load system (modular serialization, state persistence)</li>
+  <li>Steam platform integration (achievement system, SDK configuration)</li>
+  <li>Audio design (spatial footsteps, location-based ambience, interaction feedback)</li>
+  <li>Asset pipeline management (marketplace integration, performance optimization)</li>
+  <li>UI/UX implementation (inventory system, custom control widgets, settings menu)</li>
+  <li>Environmental storytelling (interactive document system, spatial design)</li>
+</ul>
 
         
       </section>
@@ -342,7 +456,7 @@
 </div>
 
 
-<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Brody Schulke</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Portfolio</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

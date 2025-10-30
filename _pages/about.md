@@ -6,10 +6,12 @@ author_profile: true
 author: brody
 sidebar: false
 toc: false
-class: wide
+classes: wide
 ---
 
-I’m an AI Automation PM who likes making work feel smoother. I enjoy turning complex, repetitive processes into clear, reliable systems.  
+[Download Resume (PDF)](/assets/resume/Brody%20Schulke%20Resume.pdf){: .btn .btn--info}
+
+I'm an AI Automation PM who likes making work smoother. I enjoy turning complex, repetitive processes into clear, reliable systems.
 
 Whether at scale or in side projects, I focus on automation that saves time and lets ideas move faster.
 
@@ -78,10 +80,10 @@ Outside of work, I build tools that explore AI-assisted creation and automation.
 ---
 
 ## Resume
-[Download Resume (PDF)](/assets/resume/Brody%20Schulke%20Resume.pdf){: .btn .btn--primary }
+[Download Resume (PDF)](/assets/resume/Brody%20Schulke%20Resume.pdf){: .btn .btn--info}
 
 ## Collaboration
-If you’re building AI-powered tools, automation platforms, or anything that makes work scale better — [let’s connect on LinkedIn](https://www.linkedin.com/in/brodyschulke/).
+If you’re building AI-powered tools, automation platforms, or anything that makes work scale better, [let’s connect on LinkedIn](https://www.linkedin.com/in/brodyschulke/).
 
 
 <em>Last updated: {{ site.time | date: '%Y-%m-%d' }}</em>

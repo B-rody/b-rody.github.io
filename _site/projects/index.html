@@ -10,14 +10,14 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Projects - Brody Schulke</title>
+<!-- begin _includes/seo.html --><title>Projects - Portfolio</title>
 <meta name="description" content="AI systems, creative automation, and indie product development.">
 
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Brody Schulke">
+<meta property="og:site_name" content="Portfolio">
 <meta property="og:title" content="Projects">
 <meta property="og:url" content="http://localhost:4000/projects/">
 
@@ -52,7 +52,7 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Brody Schulke Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Portfolio Feed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -76,7 +76,7 @@
 </script>
   </head>
 
-  <body class="layout--single" dir="ltr">
+  <body class="layout--single wide" dir="ltr">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -93,7 +93,7 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Brody Schulke
+          Portfolio
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -104,16 +104,16 @@
               >Home</a>
             </li><li class="masthead__menu-item">
               <a
-                href="/about/"
-                
-                
-              >About</a>
-            </li><li class="masthead__menu-item">
-              <a
                 href="/projects/"
                 
                 
               >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -288,9 +288,41 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Explore my work in AI systems, creative automation, and indie product development.</p>
+        <p>A collection of systems I’ve built exploring AI orchestration, automation pipelines, and creative tooling.</p>
 
-<p>Projects are listed in the sidebar (most recent first).</p>
+<hr />
+
+<h2 id="assetforge">AssetForge</h2>
+<p><strong>Multi-agent digital product automation platform</strong></p>
+
+<p>Desktop application that orchestrates four AI agents (Researcher, Planner, Maker, Packager) to generate complete marketplace-ready product bundles. Built with Tauri (Rust + React + TypeScript) and a Nuitka-compiled Python backend communicating via stdio JSON-Lines IPC.</p>
+
+<p><em>Tech: Tauri, Rust, React, TypeScript, Python, OpenAI API, Anthropic API, SQLite</em></p>
+
+<p><a href="/projects/assetforge/" class="btn btn--info">View Details</a></p>
+
+<hr />
+
+<h2 id="insiderscraper">InsiderScraper</h2>
+<p><strong>Automated SEC insider trading data pipeline + Angular SPA</strong></p>
+
+<p>Web application surfacing 30-day rolling insider stock purchases from SEC EDGAR filings. Fully automated Azure cloud pipeline (Automation, Functions, VM, Cosmos DB) scrapes, parses, and merges daily data. Angular frontend provides filterable interface for transaction analysis.</p>
+
+<p><em>Tech: Python, Azure (Automation, Functions, Cosmos DB), Angular, TypeScript, Angular Material, Tailwind CSS</em></p>
+
+<p><a href="/projects/insiderscraper/" class="btn btn--info">View Details</a></p>
+
+<hr />
+
+<h2 id="shipped-3d-game">Shipped 3D Game</h2>
+<p><strong>First-person environmental puzzle game on Steam</strong></p>
+
+<p>Unreal Engine 5.3 game featuring interconnected multi-room environments with seven distinct puzzle types, persistent save system, and Steam integration. Blueprint-heavy architecture with interface-based interaction system, inventory management, and location-specific audio ambience.</p>
+
+<p><em>Tech: Unreal Engine 5.3, Blueprints, Blender, Steam SDK</em></p>
+
+<p><a href="/projects/shipped-3d-game/" class="btn btn--info">View Details</a></p>
+
 
         
       </section>
@@ -342,7 +374,7 @@
 </div>
 
 
-<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Brody Schulke</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Portfolio</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
