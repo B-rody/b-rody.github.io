@@ -67,15 +67,16 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <script type="module">
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(element => {
+      element.classList.add("mermaid");
+    });
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
   </head>
 
-  <body class="layout--single" dir="ltr">
+  <body class="layout--single wide" dir="ltr">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -287,15 +288,51 @@
 
       <section class="page__content" itemprop="text">
         
-        <h2 id="assetforge">AssetForge</h2>
+        <h2 id="summary">Summary</h2>
+<p>AssetForge is a desktop application that automates the creation of complete digital product bundles for online marketplaces. Instead of manually researching niches, designing assets, and formatting metadata for platforms like Etsy or Gumroad, users click a button and get a production-ready folder containing assets, listing copy, pricing strategy, and a QA summary.</p>
 
-<p>Describe your AssetForge project here. Include details about:</p>
+<p>I built it as a hands-on way to learn more about AI SDKs and agent orchestration in the context of end-to-end automation.</p>
+
+<h2 id="role--scope">Role &amp; Scope</h2>
+<p>I led the entire design and implementation of the system, from concept to deployment. Throughout development, I used GitHub Copilot to explore design tradeoffs and accelerate implementation, but every architectural decision, schema design, and model configuration was my own.</p>
+
+<h2 id="system-overview">System Overview</h2>
+<p>The app runs as a Tauri desktop client (Rust + React + TypeScript) with a Python backend compiled to a native binary using Nuitka. The frontend communicates with the backend over stdio using JSON-Lines, which keeps the architecture simple and avoids the complexity of managing a local HTTP server or port conflicts. The Python backend orchestrates a four-stage pipeline using OpenAI’s API, with each agent handling a distinct phase of bundle creation:</p>
 
 <ul>
-  <li>What it does</li>
-  <li>Technologies used</li>
-  <li>Key features</li>
-  <li>Results and impact</li>
+  <li><strong>Researcher</strong>: Analyzes marketplace trends and identifies profitable digital product niches</li>
+  <li><strong>Planner</strong>: Designs the bundle structure, including asset types, pricing strategy, and target personas</li>
+  <li><strong>Maker</strong>: Generates the actual digital assets (templates, guides, etc.) and writes marketplace metadata</li>
+  <li><strong>Packager</strong>: Organizes everything into a final output folder with store-ready listings and file structure</li>
+</ul>
+
+<p>Each stage writes structured outputs and checkpoints to an SQLite database. The user’s API key is encrypted with Fernet (AES-128) and stored locally — no keys or data ever leave the machine except for OpenAI API calls. The build process compiles Python to C using Nuitka, making the final binary harder to reverse-engineer.</p>
+
+<p>Here’s a high level view of the system architecture. (Techincally there’s more happening under the hood, such as long handling, event streaming, retries and schema validation, but this captures the core flow)</p>
+
+<p><img src="/assets/images/assetforge-architecture.png" alt="System architecture diagram" /></p>
+
+<h2 id="key-challenges">Key Challenges</h2>
+<ul>
+  <li><strong>Error recovery:</strong> API calls can fail mid-pipeline due to rate limits or malformed responses. I implemented checkpointing so each stage writes outputs before advancing, allowing retries without restarting earlier steps.</li>
+  <li><strong>Cross-process communication:</strong> Initially considered HTTP, but managing ports and firewalls was brittle. Given the local nature, switching to stdio with JSON-Lines simplified communication and removed external dependencies.</li>
+  <li><strong>Structured output handling:</strong> OpenAI responses often included citation artifacts or inconsistent formatting. I added recursive cleanup and schema validation to ensure every output matched strict downstream expectations.</li>
+</ul>
+
+<h2 id="outcomes">Outcomes</h2>
+<p>The final build produces a single executable that runs fully offline after setup.<br />
+Each pipeline run generates a complete bundle folder in ~20 minutes, containing all assets, metadata, and documentation ready for upload. I could have made it faster, but this model confgiuration provided the most reliable and highest quality results. Plus, reducing draft time for a digital asset bundle from multiple hours to 20 minutes felt like a pretty good improvement to me.</p>
+
+<p>Building AssetForge taught me a lot about multi-agent orchestration, resilient retry logic for LLM APIs, AI SDKs, configuring tool calls, ephemeral containers and file creation and management.</p>
+
+<h2 id="what-this-project-highlights">What This Project Highlights</h2>
+<ul>
+  <li>Multi-agent pipeline design (structured outputs, schema validation, streaming)</li>
+  <li>Python backend architecture (async orchestration, persistence, reliability)</li>
+  <li>Rust/Tauri desktop packaging with Nuitka-compiled Python</li>
+  <li>Secure local credential storage and offline-first encryption</li>
+  <li>React + TypeScript UI with real-time IPC streaming</li>
+  <li>Data modeling lifecycle (idea → bundle → packaged artifact)</li>
 </ul>
 
         

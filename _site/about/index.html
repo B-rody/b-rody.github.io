@@ -70,12 +70,13 @@
 
 
 
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+    <script type="module">
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(element => {
+      element.classList.add("mermaid");
+    });
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
   </head>
 
   <body class="layout--single" dir="ltr">
@@ -400,7 +401,7 @@ Contributed to regulated ultrasound software and framework upgrades used in clin
 <h2 id="collaboration">Collaboration</h2>
 <p>If you’re building AI-powered tools, automation platforms, or anything that makes work scale better — <a href="https://www.linkedin.com/in/brodyschulke/">let’s connect on LinkedIn</a>.</p>
 
-<p><em>Last updated: 2025-10-28</em></p>
+<p><em>Last updated: 2025-10-29</em></p>
 
         
       </section>
