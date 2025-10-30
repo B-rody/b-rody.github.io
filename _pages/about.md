@@ -6,6 +6,7 @@ author_profile: true
 author: brody
 sidebar: false
 toc: false
+class: wide
 ---
 
 I’m an AI Automation PM who likes making work feel smoother. I enjoy turning complex, repetitive processes into clear, reliable systems.  

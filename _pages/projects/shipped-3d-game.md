@@ -9,9 +9,4 @@ title: Shipped 3D Game
 
 ## Shipped 3D Game
 
-Describe your 3D game project here. Include details about:
-
-- What it does
-- Technologies used
-- Key features
-- Results and impact
+# COMING SOON

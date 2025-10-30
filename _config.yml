@@ -30,6 +30,10 @@ include:
   - _pages
   - _projects
 
+# Ensure video files are copied during build
+keep_files:
+  - assets
+
 defaults:
   - scope:
       path: ""

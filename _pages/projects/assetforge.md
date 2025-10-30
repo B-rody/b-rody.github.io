@@ -6,7 +6,30 @@ sidebar:
 permalink: /projects/assetforge/
 title: AssetForge
 classes: wide
+gallery:
+  - url: /assets/images/assetforge/01-dashboard-banner.png
+    image_path: /assets/images/assetforge/01-dashboard-banner.png
+    alt: "AssetForge dashboard"
+    title: "Dashboard - Main interface"
+  - url: /assets/images/assetforge/02-library-banner.png
+    image_path: /assets/images/assetforge/02-library-banner.png
+    alt: "AssetForge library view"
+    title: "Library - Generated Ideas"
+  - url: /assets/images/assetforge/03-pipeline-banner.png
+    image_path: /assets/images/assetforge/03-pipeline-banner.png
+    alt: "AssetForge pipeline execution"
+    title: "Pipeline - Live agent execution"
+  - url: /assets/images/assetforge/04-bundle-gen.png
+    image_path: /assets/images/assetforge/04-bundle-gen.png
+    alt: "AssetForge bundle generation"
+    title: "Generation - Creating bundle assets"
+  - url: /assets/images/assetforge/05-bundle-output.png
+    image_path: /assets/images/assetforge/05-bundle-output.png
+    alt: "AssetForge bundle output"
+    title: "Output - Final bundle structure"
 ---
+
+<a href="https://blxai.gumroad.com/l/asset-forge" target="_blank" class="btn btn--info"><i class="fas fa-external-link-alt"></i> Product Page</a>
 
 ## Summary
 AssetForge is a desktop application that automates the creation of complete digital product bundles for online marketplaces. Instead of manually researching niches, designing assets, and formatting metadata for platforms like Etsy or Gumroad, users click a button and get a production-ready folder containing assets, listing copy, pricing strategy, and a QA summary.  
@@ -28,7 +51,9 @@ Each stage writes structured outputs and checkpoints to an SQLite database. The 
 
 Here's a high level view of the system architecture. (Techincally there's more happening under the hood, such as long handling, event streaming, retries and schema validation, but this captures the core flow)
 
-![System architecture diagram](/assets/images/assetforge-architecture.png)
+![System architecture diagram](/assets/images/assetforge/assetforge-architecture.png)
+
+{% include gallery caption="AssetForge interface walkthrough" %}
 
 ## Key Challenges
 - **Error recovery:** API calls can fail mid-pipeline due to rate limits or malformed responses. I implemented checkpointing so each stage writes outputs before advancing, allowing retries without restarting earlier steps.  
