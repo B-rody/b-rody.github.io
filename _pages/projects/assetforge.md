@@ -32,7 +32,7 @@ gallery:
 <a href="https://blxai.gumroad.com/l/asset-forge" target="_blank" class="btn btn--info"><i class="fas fa-external-link-alt"></i> Product Page</a>
 
 ## Summary
-AssetForge is a desktop application that automates the creation of complete digital product bundles for online marketplaces. Instead of manually researching niches, designing assets, and formatting metadata for platforms like Etsy or Gumroad, users click a button and get a production-ready folder containing assets, listing copy, pricing strategy, and a QA summary.  
+AssetForge is a multi-agent desktop application that automates the creation of complete digital product bundles for online marketplaces. Instead of manually researching niches, designing assets, and formatting metadata for platforms like Etsy or Gumroad, users click a button and get a production-ready folder containing assets, listing copy, pricing strategy, and a QA summary.  
 
 I built it as a hands-on way to learn more about AI SDKs and agent orchestration in the context of end-to-end automation.
 
