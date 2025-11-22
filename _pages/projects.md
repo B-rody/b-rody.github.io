@@ -12,14 +12,14 @@ A collection of systems I've built exploring AI orchestration, automation pipeli
 
 ---
 
-## AssetForge
+## AssetFurnace
 **Multi-agent digital product automation platform**
 
 Desktop application that orchestrates four AI agents (Researcher, Planner, Maker, Packager) to generate complete marketplace-ready product bundles. Built with Tauri (Rust + React + TypeScript) and a Nuitka-compiled Python backend communicating via stdio JSON-Lines IPC.
 
 *Tech: Tauri, Rust, React, TypeScript, Python, OpenAI API, Anthropic API, SQLite*
 
-[View Details](/projects/assetforge/){: .btn .btn--info}
+[View Details](/projects/assetfurnace/){: .btn .btn--info}
 
 ---
 

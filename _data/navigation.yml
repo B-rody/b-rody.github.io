@@ -8,8 +8,8 @@ main:
 
 # Sidebar navigation for project detail pages (most recent first)
 projects:
-  - title: "AssetForge"
-    url: /projects/assetforge/
+  - title: "AssetFurnace"
+    url: /projects/assetfurnace/
   - title: "InsiderScraper"
     url: /projects/insiderscraper/
   - title: "Shipped 3D Game"

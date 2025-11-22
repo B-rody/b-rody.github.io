@@ -54,7 +54,7 @@ Outside of work, I build tools that explore AI-assisted creation and automation.
 
 | Project | Purpose | More |
 |---------|----------|------|
-| **AssetForge** | End-to-end pipeline that researches, generates, and packages digital product ideas using LLMs | [Read](/projects/assetforge/) |
+| **AssetFurnace** | End-to-end pipeline that researches, generates, and packages digital product ideas using LLMs | [Read](/projects/assetfurnace/) |
 | **InsiderScraper** | Parses SEC insider-trade filings into structured, queryable data for market research | [Read](/projects/insiderscraper/) |
 | **Shipped 3D Game** | Small single-player puzzle horror game | [Read](/projects/shipped-3d-game/) |
 

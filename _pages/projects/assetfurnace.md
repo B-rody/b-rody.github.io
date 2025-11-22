@@ -3,36 +3,36 @@ layout: single
 author_profile: true
 sidebar:
   nav: "projects"
-permalink: /projects/assetforge/
-title: AssetForge
+permalink: /projects/assetfurnace/
+title: assetfurnace
 classes: wide
 gallery:
-  - url: /assets/images/assetforge/01-dashboard-banner.png
-    image_path: /assets/images/assetforge/01-dashboard-banner.png
-    alt: "AssetForge dashboard"
+  - url: /assets/images/assetfurnace/01-dashboard-banner.png
+    image_path: /assets/images/assetfurnace/01-dashboard-banner.png
+    alt: "assetfurnace dashboard"
     title: "Dashboard - Main interface"
-  - url: /assets/images/assetforge/02-library-banner.png
-    image_path: /assets/images/assetforge/02-library-banner.png
-    alt: "AssetForge library view"
+  - url: /assets/images/assetfurnace/02-library-banner.png
+    image_path: /assets/images/assetfurnace/02-library-banner.png
+    alt: "assetfurnace library view"
     title: "Library - Generated Ideas"
-  - url: /assets/images/assetforge/03-pipeline-banner.png
-    image_path: /assets/images/assetforge/03-pipeline-banner.png
-    alt: "AssetForge pipeline execution"
+  - url: /assets/images/assetfurnace/03-pipeline-banner.png
+    image_path: /assets/images/assetfurnace/03-pipeline-banner.png
+    alt: "assetfurnace pipeline execution"
     title: "Pipeline - Live agent execution"
-  - url: /assets/images/assetforge/04-bundle-gen.png
-    image_path: /assets/images/assetforge/04-bundle-gen.png
-    alt: "AssetForge bundle generation"
+  - url: /assets/images/assetfurnace/04-bundle-gen.png
+    image_path: /assets/images/assetfurnace/04-bundle-gen.png
+    alt: "assetfurnace bundle generation"
     title: "Generation - Creating bundle assets"
-  - url: /assets/images/assetforge/05-bundle-output.png
-    image_path: /assets/images/assetforge/05-bundle-output.png
-    alt: "AssetForge bundle output"
+  - url: /assets/images/assetfurnace/05-bundle-output.png
+    image_path: /assets/images/assetfurnace/05-bundle-output.png
+    alt: "assetfurnace bundle output"
     title: "Output - Final bundle structure"
 ---
 
-<a href="https://github.com/B-rody/asset-forge" target="_blank" class="btn btn--info"><i class="fas fa-external-link-alt"></i> Product Page</a>
+<a href="https://github.com/B-rody/asset-furnace" target="_blank" class="btn btn--info"><i class="fas fa-external-link-alt"></i> Product Page</a>
 
 ## Summary
-AssetForge is a multi-agent desktop application that automates the creation of complete digital product bundles for online marketplaces. Instead of manually researching niches, designing assets, and formatting metadata for platforms like Etsy or Gumroad, users click a button and get a production-ready folder containing assets, listing copy, pricing strategy, and a QA summary.  
+assetfurnace is a multi-agent desktop application that automates the creation of complete digital product bundles for online marketplaces. Instead of manually researching niches, designing assets, and formatting metadata for platforms like Etsy or Gumroad, users click a button and get a production-ready folder containing assets, listing copy, pricing strategy, and a QA summary.  
 
 I built it as a hands-on way to learn more about AI SDKs and agent orchestration in the context of end-to-end automation.
 
@@ -51,9 +51,9 @@ Each stage writes structured outputs and checkpoints to an SQLite database. The 
 
 Here's a high level view of the system architecture. (Techincally there's more happening under the hood, such as long handling, event streaming, retries and schema validation, but this captures the core flow)
 
-![System architecture diagram](/assets/images/assetforge/assetforge-architecture.png)
+![System architecture diagram](/assets/images/assetfurnace/assetfurnace-architecture.png)
 
-{% include gallery caption="AssetForge interface walkthrough" %}
+{% include gallery caption="assetfurnace interface walkthrough" %}
 
 ## Key Challenges
 - **Error recovery:** API calls can fail mid-pipeline due to rate limits or malformed responses. I implemented checkpointing so each stage writes outputs before advancing, allowing retries without restarting earlier steps.  
@@ -64,7 +64,7 @@ Here's a high level view of the system architecture. (Techincally there's more h
 The final build produces a single executable that runs fully offline after setup.  
 Each pipeline run generates a complete bundle folder in ~20 minutes, containing all assets, metadata, and documentation ready for upload. I could have made it faster, but this model confgiuration provided the most reliable and highest quality results. Plus, reducing draft time for a digital asset bundle from multiple hours to 20 minutes felt like a pretty good improvement to me.
 
-Building AssetForge taught me a lot about multi-agent orchestration, resilient retry logic for LLM APIs, AI SDKs, configuring tool calls, ephemeral containers and file creation and management.
+Building assetfurnace taught me a lot about multi-agent orchestration, resilient retry logic for LLM APIs, AI SDKs, configuring tool calls, ephemeral containers and file creation and management.
 
 ## What This Project Highlights
 - Multi-agent pipeline design (structured outputs, schema validation, streaming)  
