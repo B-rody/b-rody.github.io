@@ -23,6 +23,17 @@ Desktop application that orchestrates four AI agents (Researcher, Planner, Maker
 
 ---
 
+## Net Vantage
+**B2B credit control and accounts-receivable operations for Shopify**
+
+Independently designed, built, and launched Shopify app that gives wholesale merchants credit-limit controls, A/R aging visibility, payment-terms tracking, order warnings, checkout enforcement, reliability metrics, and CSV exports.
+
+*Scope: Product strategy, architecture, Shopify integrations and extensions, testing, deployment, launch*
+
+[View Details](/projects/net-vantage/){: .btn .btn--info}
+
+---
+
 ## InsiderScraper
 **Automated SEC insider trading data pipeline + Angular SPA**
 
@@ -42,4 +53,3 @@ Unreal Engine 5.3 game featuring interconnected multi-room environments with sev
 *Tech: Unreal Engine 5.3, Blueprints, Blender, Steam SDK*
 
 [View Details](/projects/shipped-3d-game/){: .btn .btn--info}
-

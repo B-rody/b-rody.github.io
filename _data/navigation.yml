@@ -10,6 +10,8 @@ main:
 projects:
   - title: "AssetFurnace"
     url: /projects/assetfurnace/
+  - title: "Net Vantage"
+    url: /projects/net-vantage/
   - title: "InsiderScraper"
     url: /projects/insiderscraper/
   - title: "Shipped 3D Game"
