@@ -34,9 +34,12 @@ Across my work, both professionally and personally, a few consistent patterns em
 
 
 ## Personal Projects - All Built Solo
-- **[AssetForge](/projects/assetforge/):** Multi-agent digital asset research, planning, creation, and packaging.
+- **[AssetFurnace](/projects/assetfurnace/):** Multi-agent digital asset research, planning, creation, and packaging.
     - Python · Rust (Tauri) · React · TypeScript · OpenAI API SDK
     - Streamlines draft generation for digital asset packs to ~20 minutes per iteration
+- **[Net Vantage](/projects/net-vantage/):** Shopify app for B2B credit controls, accounts-receivable visibility, and checkout enforcement.
+    - Product strategy · Shopify integrations and extensions · Testing · Deployment
+    - Independently designed, built, and launched through Valence Core
 - **[InsiderScraper](/projects/insiderscraper/):** Heuristic-based insider trading scraping, rationalization, and presentation.
     - Python · Angular · TypeScript · Azure (Functions, VM, and Cosmos DB)
     - Processed daily SEC Form 4 data, normalizing thousands of entries into a rolling dataset that highlights potential bullish sentiment from insider buying activity.
